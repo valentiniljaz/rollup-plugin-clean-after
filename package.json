@@ -1,0 +1,33 @@
+{
+  "name": "rollup-plugin-clean-after",
+  "version": "1.0.0",
+  "description": "Clean up dirs after the Rollup build ends",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valentiniljaz/rollup-plugin-clean-after.git"
+  },
+  "keywords": [
+    "rollup",
+    "plugin",
+    "cleanup"
+  ],
+  "author": "Valentin Iljaž <valentin.iljaz@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/valentiniljaz/rollup-plugin-clean-after/issues"
+  },
+  "files": [
+    "*.js"
+  ],
+  "homepage": "https://github.com/valentiniljaz/rollup-plugin-clean-after#readme",
+  "dependencies": {
+    "rimraf": "^3.0.2"
+  },
+  "peerDependencies": {
+    "rollup": "> 1.0"
+  }
+}
