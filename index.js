@@ -1,22 +1,23 @@
-import { promisify } from 'util';
-import path from 'path';
-import fs from 'fs';
+'use strict'
 
-const rimraf = promisify(require('rimraf'));
+const { promisify } = require('util')
+const fs = require('fs')
+const path = require('path')
+const rimraf = promisify(require('rimraf'))
 
-export const cleanAfter = ({ targets = [], silent = true } = {}) => {
-    return {
-        name: "cleanAfter",
-        async buildEnd(_options) {
-            for (const targetPath of targets) {
-              const normalisedPath = path.normalize(targetPath)
-              if (fs.existsSync(normalisedPath)) {
-                if (!silent) {
-                  console.log(`cleaning path: ${normalisedPath}`)
-                }
-                await rimraf(normalisedPath);
-              }
-            }
+module.exports = function({ targets = [], silent = true } = {}) {
+  return {
+    name: 'cleanAfter',
+    async buildEnd(_options) {
+      for (const targetPath of targets) {
+        const normalisedPath = path.normalize(targetPath)
+        if (fs.existsSync(normalisedPath)) {
+          if (!silent) {
+            console.log(`cleaning path: ${normalisedPath}`)
           }
-    };
-};
+          await rimraf(normalisedPath)
+        }
+      }
+    },
+  }
+}
