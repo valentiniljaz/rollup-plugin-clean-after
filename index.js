@@ -8,7 +8,7 @@ const rimraf = promisify(require('rimraf'))
 module.exports = function({ targets = [], silent = true } = {}) {
   return {
     name: 'cleanAfter',
-    async buildEnd(_options) {
+    async writeBundle(_options) {
       for (const targetPath of targets) {
         const normalisedPath = path.normalize(targetPath)
         if (fs.existsSync(normalisedPath)) {

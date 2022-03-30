@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-clean-after",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Clean up dirs after the Rollup build ends",
   "main": "index.js",
   "scripts": {
